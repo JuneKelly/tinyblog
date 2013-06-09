@@ -1,0 +1,8 @@
+from django.conf.urls import patterns, include, url
+
+from . import views
+
+urlpatterns = patterns('',
+    url(r'^$', views.index, name="blog_index"),
+    url( r'^(?P<id>\d+)/$', views.blog_post, name="blog_post")
+)
