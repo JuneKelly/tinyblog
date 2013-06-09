@@ -1,0 +1,2 @@
+*.pyc
+tinyblog/settings/local.py
