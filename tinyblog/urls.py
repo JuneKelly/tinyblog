@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.conf.urls import patterns, include, url
 
 
@@ -11,5 +12,11 @@ urlpatterns = patterns('',
     # url(r'^tinyblog/', include('tinyblog.foo.urls')),
     
     url(r'^$', 'tinyblog.views.home', name='home'),
-    url(r'^blog/', include('blog.urls')),
+    url(r'^blog/', include('blog.urls', namespace='blog')),
+)
+
+urlpatterns += patterns('',
+    (r'^static/(.*)$', 'django.views.static.serve', {
+        'document_root': settings.STATIC_ROOT
+    }),
 )

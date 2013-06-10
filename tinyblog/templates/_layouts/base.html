@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>TinyBlog</title>
+
+    <link rel='stylesheet' href="{{ STATIC_URL }}css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <a href="/" class="brand">Tinyblog</a>
+            <ul class="nav">
+              <li><a href={% url 'blog:index' %}>Blog</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="content">
+          {% block content %}{% endblock content %}
+        </div>
+      
+      </div>
+    </div>
+  </body>
+</html>
