@@ -27,7 +27,7 @@ class BlogPost(DjangoDocument):
 
     indexes = [
         { 'fields': ['published_date'] }        
-    ] 
+        ]
 
     def save(self, *args, **kwargs):
         if not self.get('slug'):
