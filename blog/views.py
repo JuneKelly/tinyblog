@@ -12,4 +12,4 @@ def blog_post(request, slug):
     coll = get_database()['blogposts']
     post = coll.BlogPost.find_one({ 'slug': slug })
     
-    return HttpResponse('blog = {0}'.format(post['title']))
+    return render(request, 'blog/blog_post.html', {'post': post}) 

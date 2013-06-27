@@ -1,0 +1,13 @@
+{% extends '_layouts/base.html' %}
+
+{% block content %}
+  <div>
+    <h1>{{ post.title }}</h1>
+    <p>
+      {{ post.content }}
+    </p>
+    <p>
+      {{ post.published_date|date:'SHORT_DATE_FORMAT' }}
+    </p>
+  </div>
+{% endblock %}
